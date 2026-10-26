@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Rasha Ahmed Ghareeb</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            color: #333;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cv-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border-top: 6px solid #b83280;
+        }
+
+        /* Header Section */
+        .cv-header {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-img-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(45deg, #b83280, #ff80ab);
+            box-shadow: 0 5px 15px rgba(184, 50, 128, 0.3);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            display: block;
+        }
+
+        .cv-header h1 {
+            color: #4a148c;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .cv-header p.title {
+            color: #880e4f;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Body Section */
+        .cv-body {
+            padding: 30px 40px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #b83280;
+            border-bottom: 2px solid #f8bbd0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .info-item {
+            background: #fdf2f8;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            color: #4a5568;
+            border-left: 4px solid #b83280;
+        }
+
+        .info-item strong {
+            color: #2d3748;
+        }
+
+        /* Skills Tags */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #b83280, #e91e63);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(184, 50, 128, 0.2);
+        }
+
+        /* Hobbies */
+        .hobbies-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hobby-item {
+            background: #f3e5f5;
+            color: #6a1b9a;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            background: #fdf2f8;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #f8bbd0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #4a148c;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #f8bbd0;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            color: #333;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: #b83280;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .send-btn {
+            background: linear-gradient(135deg, #b83280, #e91e63);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            box-shadow: 0 3px 8px rgba(184, 50, 128, 0.3);
+        }
+
+        .send-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Footer / Print Button */
+        .cv-footer {
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .print-btn {
+            background: #4a148c;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 10px rgba(74, 20, 140, 0.3);
+        }
+
+        .print-btn:hover {
+            background: #6a1b9a;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .cv-container {
+                box-shadow: none;
+                border: none;
+            }
+            .print-btn, .contact-form {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header">
+            <div class="profile-img-container">
+                <img src="profile.jpeg" alt="Rasha Ahmed Ghareeb" class="profile-img">
+            </div>
+            <h1>Rasha Ahmed Ghareeb Ahmed</h1>
+            <p class="title">Health Informatics Major - Faculty of Health Technology Sciences</p>
+        </div>
+
+        <!-- Body -->
+        <div class="cv-body">
+            
+            <!-- Personal Information -->
+            <div class="section">
+                <div class="section-title">📌 Personal & Academic Information</div>
+                <div class="info-grid">
+                    <div class="info-item"><strong>Age:</strong> 20 Years Old</div>
+                    <div class="info-item"><strong>Academic Year:</strong> Second Year</div>
+                    <div class="info-item"><strong>Expected Graduation:</strong> 2028</div>
+                    <div class="info-item"><strong>Email:</strong> rashaahmed2006ra904@gmail.com</div>
+                    <div class="info-item"><strong>Phone:</strong> 01055924214</div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="section">
+                <div class="section-title">💻 Technical Skills</div>
+                <div class="skills-container">
+                    <span class="skill-tag">Database</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">HTML</span>
+                </div>
+            </div>
+
+            <!-- Hobbies -->
+            <div class="section">
+                <div class="section-title">🎨 Hobbies & Interests</div>
+                <div class="hobbies-list">
+                    <span class="hobby-item">📚 Reading</span>
+                    <span class="hobby-item">🔍 Discovering New Things</span>
+                </div>
+            </div>
+
+            <!-- Send Message Section -->
+            <div class="section">
+                <div class="section-title">✉️ Send Me a Message</div>
+                <div class="contact-form">
+                    <!-- استخدام خاصية mailto لتوجيه الرسالة مباشرة لإيميلك -->
+                    <form action="mailto:rashaahmed2006ra904@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Your Name:</label>
+                            <input type="text" id="name" name="Sender_Name" class="form-control" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email:</label>
+                            <input type="email" id="email" name="Sender_Email" class="form-control" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="Sender_Message" class="form-control" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="cv-footer">
+            <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+        </div>
+    </div>
+
+</body>
+</html>
